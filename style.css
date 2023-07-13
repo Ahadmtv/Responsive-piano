@@ -1,0 +1,153 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;1,400;1,900&display=swap');
+ *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+ }
+ body{
+    background-color: rgb(131, 201, 255);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .wrapper{
+    background-color: black;
+    color: white;
+    width: auto;
+    border-radius: 40px;
+    user-select: none;
+ }
+ .wrapper header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+ }
+ header label{
+    margin-right: 10px;
+    font-weight: bold;
+ }
+ header .volume input{
+    vertical-align: middle;
+    accent-color: #fff;
+ }
+ header .key-check input{
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    background-color: rgb(84, 84, 84);
+    border-radius: 30px;
+    vertical-align: middle;
+    position: relative;
+
+ }
+ header .key-check input::before{
+    content: "";
+    width:20px ;
+    height: 20px;
+    border-radius: 50%;
+    background-color:gray ;
+    position: absolute;
+    left: 3px;
+    top: 2.5px;
+    transition: all 0.3s ease;
+ }
+ header .key-check input:checked::before{
+    background-color: #fff;
+    left: 27px;
+ }
+ .key-btn{
+    list-style: none;
+    display: flex;
+margin: 30px;
+user-select: none;
+ }
+ .key-btn .white{
+background:linear-gradient(#fff 96%,#eee 4%);
+width: 70px;
+height: 230px;
+border-radius: 8px;
+border: 1px solid #000;
+ }
+ .key-btn .black.active{
+    box-shadow: inset -5px 5px 10px rgba(255,255,255,0.1);
+    background: linear-gradient(to bottom,#000,#434343);
+ }
+ .key-btn .black:active{
+    box-shadow: inset -5px 5px 10px rgba(255,255,255,0.1);
+    background: linear-gradient(to bottom,#000,#434343);
+ }
+ .key-btn .black{
+    background-color: black;
+    width: 44px;
+    height: 140px;
+    margin: 0 -22px 0 -22px;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+     }
+     .key-btn .white.active{
+        box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
+        background: linear-gradient(to bottom,#fff 0%,#eee 100%);
+     }
+     .key-btn .white:active{
+        box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
+        background: linear-gradient(to bottom,#fff 0%,#eee 100%);
+     }
+     .key-btn .key{
+        position: relative;
+        cursor: pointer;
+     }
+ .key-btn span{
+    color: gray;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+ }
+ .hide{
+    display: none;
+ }
+ @media screen and (max-width:815px){
+    .wrapper{
+        padding: 25px;
+    }
+    header{
+        flex-direction: column;
+    }
+    header :where(h2, .volume){
+        margin-bottom: 13px;
+    }
+    .volume input{
+        max-width: 100px;
+    }
+    .key-btn{
+        margin-top:20px ;
+    }
+    .key-btn .key:where(:nth-child(9),:nth-child(10)){
+        display: none;
+    }
+    .key-btn .black{
+        height: 100px;
+        width: 40px;
+        margin: 0 -20px 0 -20px;
+    }
+    .key-btn .white{
+        height: 180px;
+        width: 60px;
+    }
+ }
+ @media screen and (max-width:615px) {
+    .key-btn .key:nth-child(13),
+    .key-btn .key:nth-child(14),
+    .key-btn .key:nth-child(15),
+    .key-btn .key:nth-child(16),
+    .key-btn .key:nth-child(17){
+        display: none;
+    }
+    .key-btn .white{
+        width: 50px;
+    }
+ }
